@@ -114,6 +114,9 @@ echo -e "${CYAN}[3/6] Building frontend...${NC}"
 
 cd "$FRONTEND_DIR"
 
+# Reset lock file to avoid git pull conflicts on re-deploy
+git checkout -- package-lock.json 2>/dev/null || true
+
 npm install --legacy-peer-deps -q 2>&1 | tail -1
 
 echo -e "   Building Next.js (this takes a minute)..."
