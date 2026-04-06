@@ -1,23 +1,11 @@
 import Link from "next/link";
-import {
-  Wrench,
-  Calculator,
-  Timer,
-  Wallet,
-  Flame,
-  BookOpen,
-  CalendarDays,
-  Type,
-  ArrowLeftRight,
-  Droplets,
-  Moon,
-} from "lucide-react";
+import { Wrench, Calculator, Timer } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Lifestyle Tools — APK World",
   description:
-    "Free lifestyle tools: BMI Calculator, Pomodoro Timer, Budget Tracker, Habit Streak Tracker, and more. Each tool includes AI tips to extend your results.",
+    "Free lifestyle tools: BMI Calculator and Pomodoro Timer. Each tool includes AI tips to extend your results.",
 };
 
 const tools = [
@@ -40,86 +28,6 @@ const tools = [
     badge: "Live",
     badgeColor: "bg-green-400/10 text-green-400 border-green-400/30",
     live: true,
-  },
-  {
-    title: "Budget Tracker",
-    description:
-      "Track income and expenses by category. View monthly summaries, visualize spending patterns, and export your data as CSV.",
-    href: "/tools/budget-tracker",
-    icon: Wallet,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Habit Streak Tracker",
-    description:
-      "Build positive habits with daily check-offs, streak counters, and a calendar heatmap. Never break the chain.",
-    href: "/tools/habit-tracker",
-    icon: Flame,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Book Reading List",
-    description:
-      "Manage your reading list with status tracking (to-read, reading, done), star ratings, notes, and filters.",
-    href: "/tools/book-list",
-    icon: BookOpen,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Age Calculator",
-    description:
-      "Enter your birthdate to get your exact age in years, months, and days — plus a countdown to your next birthday.",
-    href: "/tools/age-calculator",
-    icon: CalendarDays,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Word & Reading Time Counter",
-    description:
-      "Paste any text to get word count, character count, sentence count, estimated reading time, and speaking time.",
-    href: "/tools/word-counter",
-    icon: Type,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Unit Converter",
-    description:
-      "Convert between length, weight, temperature, volume, and speed units. All common conversions in one place.",
-    href: "/tools/unit-converter",
-    icon: ArrowLeftRight,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Daily Water Intake Calculator",
-    description:
-      "Calculate your recommended daily water intake based on weight and activity level. Track glasses throughout the day.",
-    href: "/tools/water-intake",
-    icon: Droplets,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
-  },
-  {
-    title: "Sleep Cycle Calculator",
-    description:
-      "Find optimal bedtime or wake-up times based on 90-minute sleep cycles. Wake up feeling refreshed, not groggy.",
-    href: "/tools/sleep-calculator",
-    icon: Moon,
-    badge: "Coming Soon",
-    badgeColor: "bg-brand-400/10 text-brand-400 border-brand-400/30",
-    live: false,
   },
 ];
 

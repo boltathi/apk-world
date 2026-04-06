@@ -60,15 +60,7 @@
 ### Lifestyle Tools
 - 🧮 **BMI Calculator** — Public tool at `/tools/bmi-calculator`. Calculate Body Mass Index with metric/imperial toggle, color-coded results (Underweight/Normal/Overweight/Obese), visual BMI scale bar, localStorage calculation history, and AI tips for personalized health guidance
 - ⏱️ **Pomodoro Timer** — Public tool at `/tools/pomodoro-timer`. Circular countdown timer with configurable work/break durations (default 25/5 min), browser notifications, session counter, daily stats tracking, 14-day history, all-time stats, and AI tips for task breakdown
-- 💰 **Budget Tracker** — Coming soon. Track income/expenses by category, monthly summaries, spending visualization, CSV export
-- 🔥 **Habit Streak Tracker** — Coming soon. Daily habit check-offs, streak counters, calendar heatmap
-- 📚 **Book Reading List** — Coming soon. Reading status tracking, star ratings, notes, filters
-- 🎂 **Age Calculator** — Coming soon. Exact age + next birthday countdown
-- ✍️ **Word & Reading Time Counter** — Coming soon. Word/character/sentence counts, reading & speaking time
-- 🔄 **Unit Converter** — Coming soon. Length, weight, temperature, volume, speed conversions
-- 💧 **Daily Water Intake Calculator** — Coming soon. Recommended intake + glass tracker
-- 🌙 **Sleep Cycle Calculator** — Coming soon. Optimal bed/wake times based on 90-min cycles
-- 🧰 **Tools Index** — Landing page at `/tools` listing all available lifestyle tools with descriptions, status badges, and AI enhancement tips
+- 🧰 **Tools Index** — Landing page at `/tools` listing all available lifestyle tools with descriptions and AI enhancement tips
 
 > **AI-Enhanced Tools** — Every tool includes an "🤖 AI Tip" card suggesting how to extend your results using ChatGPT, Claude, or any AI assistant. Tools are 100% client-side (no backend, no sign-up) with localStorage persistence.
 
@@ -260,7 +252,7 @@ apk-world/
 │   │   │   ├── og/[slug]/route.tsx  # Dynamic OG image generation (edge)
 │   │   │   ├── rss.xml/route.ts     # RSS 2.0 feed
 │   │   │   ├── tools/
-│   │   │   │   ├── page.tsx                   # Tools index (10 tools)
+│   │   │   │   ├── page.tsx                   # Tools index (2 tools)
 │   │   │   │   ├── bmi-calculator/page.tsx    # BMI Calculator
 │   │   │   │   └── pomodoro-timer/page.tsx    # Pomodoro Timer
 │   │   │   ├── admin/
@@ -362,14 +354,6 @@ apk-world/
 - [x] Tools index page
 - [x] BMI Calculator (metric/imperial, history, AI tips)
 - [x] Pomodoro Timer (configurable, notifications, daily stats, AI tips)
-- [ ] Budget Tracker (income/expenses, categories, CSV export)
-- [ ] Habit Streak Tracker (daily check-offs, streaks, calendar heatmap)
-- [ ] Book Reading List (status tracking, ratings, notes)
-- [ ] Age Calculator (exact age, birthday countdown)
-- [ ] Word & Reading Time Counter (word/char/sentence counts)
-- [ ] Unit Converter (length, weight, temperature, volume, speed)
-- [ ] Daily Water Intake Calculator (weight-based, glass tracker)
-- [ ] Sleep Cycle Calculator (90-min cycle optimizer)
 - [ ] Comments system
 - [ ] Analytics dashboard
 - [ ] CI/CD pipeline (GitHub Actions)

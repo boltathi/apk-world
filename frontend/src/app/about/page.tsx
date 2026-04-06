@@ -10,7 +10,7 @@ import AboutStats from "./AboutStats";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Athithan Raj P & Pavithra Mohan — the team behind APK World. Building a lifestyle and learning platform for personal growth.",
+  description: "Athithan Raj P, Pavithra Mohan & Kavi Mithraa A — the team behind APK World. Building a lifestyle and learning platform for personal growth.",
 };
 
 const values = [
@@ -41,6 +41,16 @@ const teamMembers = [
     initialsColor: "text-brand-400",
     skills: ["Content Strategy", "Nutrition", "Mindfulness", "Technical Writing", "Research"],
   },
+  {
+    name: "Kavi Mithraa A",
+    initials: "KM",
+    role: "Explorer & Joy Ambassador",
+    bio: "Lets us explore things joyfully every day and our team's world. Curious and always learning new things — and making sure everyone around gets to learn and enjoy too.",
+    linkedin: "",
+    gradient: "from-pink-400 to-purple-500",
+    initialsColor: "text-pink-400",
+    skills: ["Curiosity", "Exploration", "Joy", "Learning", "Teamwork"],
+  },
 ];
 
 const faqItems = [
@@ -64,6 +74,12 @@ export default function AboutPage() {
         jobTitle="Content Strategist & Wellness Advocate"
         description="Co-maintainer of APK World. Focused on content quality, research accuracy, and accessible lifestyle education."
         linkedinUrl="https://www.linkedin.com/in/pavithrakavi/"
+      />
+      <PersonJsonLd
+        name="Kavi Mithraa A"
+        jobTitle="Explorer & Joy Ambassador"
+        description="Lets the team explore things joyfully and inspires curiosity and learning for everyone around."
+        linkedinUrl=""
       />
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero */}
@@ -131,9 +147,11 @@ export default function AboutPage() {
                     </span>
                   ))}
                 </div>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-sm text-cyber-400 hover:text-cyber-300 transition-colors">
-                  <Linkedin className="h-4 w-4" /> LinkedIn Profile
-                </a>
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-sm text-cyber-400 hover:text-cyber-300 transition-colors">
+                    <Linkedin className="h-4 w-4" /> LinkedIn Profile
+                  </a>
+                )}
               </div>
             ))}
           </div>
