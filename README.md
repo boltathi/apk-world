@@ -45,7 +45,7 @@
 ## Features
 
 ### Content
-- 📝 **Articles** — Lifestyle & personal growth articles with 10 categories, tags, search, pagination, optional author field, difficulty levels (beginner/intermediate/advanced), and social share buttons (Twitter, LinkedIn, Reddit, HN)
+- 📝 **Articles** — Lifestyle & personal growth articles with 11 categories (incl. Parenting), tags, search, pagination, optional author field, difficulty levels (beginner/intermediate/advanced), and social share buttons (Twitter, LinkedIn, Reddit, HN)
 - 📑 **Table of Contents** — Auto-generated sticky TOC sidebar on article pages with IntersectionObserver scroll spy, only shows for articles with 3+ headings
 - 🔍 **Search** — Full-text search across articles with real-time results and search bar UI
 - 🎯 **Difficulty Levels** — Articles tagged as beginner, intermediate, or advanced with color-coded badges and filter support on the articles page
@@ -60,7 +60,10 @@
 ### Lifestyle Tools
 - 🧮 **BMI Calculator** — Public tool at `/tools/bmi-calculator`. Calculate Body Mass Index with metric/imperial toggle, color-coded results (Underweight/Normal/Overweight/Obese), visual BMI scale bar, localStorage calculation history, and AI tips for personalized health guidance
 - ⏱️ **Pomodoro Timer** — Public tool at `/tools/pomodoro-timer`. Circular countdown timer with configurable work/break durations (default 25/5 min), browser notifications, session counter, daily stats tracking, 14-day history, all-time stats, and AI tips for task breakdown
-- 🧰 **Tools Index** — Landing page at `/tools` listing all available lifestyle tools with descriptions and AI enhancement tips
+- 🔥 **Calorie Calculator** — Public tool at `/tools/calorie-calculator`. Calculate daily calories for weight loss/gain/maintenance using Mifflin-St Jeor equation. BMR, TDEE, macro breakdown (protein/carbs/fat), 5 goal presets, 5 activity levels, localStorage history, and AI tips for meal planning
+- 🧘 **Meditation Timer** — Public tool at `/tools/meditation-timer`. Guided breathing (4-4-6 inhale-hold-exhale) with 4 ambient sounds (rain, ocean, singing bowl, forest) via Web Audio API. Duration presets (5-30 min), volume control, session stats, admin custom sound upload, and AI tips for mindfulness routines
+- 🏋️ **Exercise Countdown** — Public tool at `/tools/exercise-countdown`. Voice-guided gym buddy with 10 preset exercises + custom. Configurable sets/reps/rest, SpeechSynthesis voice cues ("3…2…1…Go!"), mute/volume toggle, system voice picker, timed & rep-based modes, workout history, and AI tips for HIIT plans
+- 🧰 **Tools Index** — Landing page at `/tools` listing all 5 available lifestyle tools with descriptions and AI enhancement tips
 
 > **AI-Enhanced Tools** — Every tool includes an "🤖 AI Tip" card suggesting how to extend your results using ChatGPT, Claude, or any AI assistant. Tools are 100% client-side (no backend, no sign-up) with localStorage persistence.
 
@@ -252,8 +255,11 @@ apk-world/
 │   │   │   ├── og/[slug]/route.tsx  # Dynamic OG image generation (edge)
 │   │   │   ├── rss.xml/route.ts     # RSS 2.0 feed
 │   │   │   ├── tools/
-│   │   │   │   ├── page.tsx                   # Tools index (2 tools)
+│   │   │   │   ├── page.tsx                   # Tools index (5 tools)
 │   │   │   │   ├── bmi-calculator/page.tsx    # BMI Calculator
+│   │   │   │   ├── calorie-calculator/page.tsx # Calorie Calculator
+│   │   │   │   ├── meditation-timer/page.tsx   # Meditation Timer
+│   │   │   │   ├── exercise-countdown/page.tsx # Exercise Countdown (Gym Buddy)
 │   │   │   │   └── pomodoro-timer/page.tsx    # Pomodoro Timer
 │   │   │   ├── admin/
 │   │   │   │   ├── layout.tsx       # Admin shell + auth guard
@@ -330,7 +336,7 @@ apk-world/
 
 ## Roadmap
 
-- [x] Articles with 10 lifestyle categories
+- [x] Articles with 11 lifestyle categories (incl. Parenting)
 - [x] Article search with search bar UI
 - [x] Enterprise TipTap WYSIWYG editor with image upload
 - [x] Image upload stored in Redis (max 2 MB)
@@ -354,6 +360,10 @@ apk-world/
 - [x] Tools index page
 - [x] BMI Calculator (metric/imperial, history, AI tips)
 - [x] Pomodoro Timer (configurable, notifications, daily stats, AI tips)
+- [x] Calorie Calculator (BMR/TDEE, weight gain/loss goals, macro breakdown, AI tips)
+- [x] Meditation Timer (ambient sounds, breathing guide, session stats, admin custom sounds)
+- [x] Exercise Countdown (voice-guided gym buddy, SpeechSynthesis, sets/reps/rest)
+- [x] Parenting article category
 - [ ] Comments system
 - [ ] Analytics dashboard
 - [ ] CI/CD pipeline (GitHub Actions)

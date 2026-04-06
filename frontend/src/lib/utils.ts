@@ -39,6 +39,7 @@ export const CATEGORIES = [
   "Book Reviews",
   "Mental Health",
   "Lifestyle Hacks",
+  "Parenting",
 ];
 
 

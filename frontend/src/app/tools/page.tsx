@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Wrench, Calculator, Timer } from "lucide-react";
+import { Wrench, Calculator, Timer, Flame, Music, Dumbbell } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Lifestyle Tools — APK World",
   description:
-    "Free lifestyle tools: BMI Calculator and Pomodoro Timer. Each tool includes AI tips to extend your results.",
+    "Free lifestyle tools: BMI Calculator, Pomodoro Timer, Calorie Calculator, Meditation Timer, and Exercise Countdown. Each tool includes AI tips to extend your results.",
 };
 
 const tools = [
@@ -25,6 +25,36 @@ const tools = [
       "Stay focused with the Pomodoro technique. Configurable work & break durations, session tracking, browser notifications, and daily stats.",
     href: "/tools/pomodoro-timer",
     icon: Timer,
+    badge: "Live",
+    badgeColor: "bg-green-400/10 text-green-400 border-green-400/30",
+    live: true,
+  },
+  {
+    title: "Calorie Calculator",
+    description:
+      "Calculate daily calories for weight loss, gain, or maintenance. Get BMR, TDEE, macro breakdown (protein/carbs/fat), and track your history.",
+    href: "/tools/calorie-calculator",
+    icon: Flame,
+    badge: "Live",
+    badgeColor: "bg-green-400/10 text-green-400 border-green-400/30",
+    live: true,
+  },
+  {
+    title: "Meditation Timer",
+    description:
+      "Guided breathing with ambient sounds (rain, ocean, singing bowl, forest). Configurable durations, breathing animation, and session stats.",
+    href: "/tools/meditation-timer",
+    icon: Music,
+    badge: "Live",
+    badgeColor: "bg-green-400/10 text-green-400 border-green-400/30",
+    live: true,
+  },
+  {
+    title: "Exercise Countdown",
+    description:
+      "Your voice-guided gym buddy. Preset exercises, configurable sets/reps/rest, SpeechSynthesis voice cues, and workout history.",
+    href: "/tools/exercise-countdown",
+    icon: Dumbbell,
     badge: "Live",
     badgeColor: "bg-green-400/10 text-green-400 border-green-400/30",
     live: true,
