@@ -41,6 +41,7 @@
 | **Auth** | JWT (access 1h + refresh 7d) with token rotation, Redis blocklist (DB 8) |
 | **Deployment** | Contabo VPS, Nginx, screen sessions |
 | **SEO** | JSON-LD, Dynamic Sitemap, robots.txt, RSS 2.0, Dynamic OG Images, Canonical URLs |
+| **PWA** | @ducanh2912/next-pwa, Workbox, Service Worker, Offline Support, Install Prompt |
 
 ## Features
 
@@ -79,6 +80,13 @@
 - ⚡ **Redis** — 5 databases (DB 5 cache, DB 6 sessions, DB 7 rate-limits, DB 8 JWT blocklist, DB 9 data storage)
 - 🔒 **Security** — Rate limiting, CORS, HSTS, CSP headers, bcrypt, JWT auth with refresh token rotation, input sanitization (bleach), 5 MB request limit, Marshmallow validation
 - 📈 **Scalable** — Gunicorn workers, standalone Next.js, horizontal scaling ready
+
+### Progressive Web App (PWA)
+- 📲 **Install Prompt** — "Install APK World" banner appears after 3 seconds, dismissible for 7 days, triggers native app install via `beforeinstallprompt` API
+- 📴 **Offline Support** — All 5 lifestyle tools work fully offline (BMI, Calorie, Pomodoro, Meditation, Exercise). Service worker caches static assets, fonts, and pages
+- ⚡ **Caching Strategies** — CacheFirst for static assets & Google Fonts (30-day TTL), StaleWhileRevalidate for article API (1-hour TTL), NetworkFirst for page navigations (1-day TTL, 5s timeout)
+- 🎨 **Web App Manifest** — Standalone display, amber (#fbbf24) theme color, app shortcuts for Tools & Articles, PWA-optimized icons (192×192, 512×512, maskable)
+- 📱 **Native Experience** — Standalone mode, apple-web-app-capable, custom status bar styling, app icon on home screen
 
 ## Quick Start
 
@@ -237,9 +245,10 @@ apk-world/
 ├── frontend/
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── layout.tsx           # Root layout (Header/Footer)
+│   │   │   ├── layout.tsx           # Root layout (Header/Footer/InstallPrompt)
 │   │   │   ├── page.tsx             # Home page
 │   │   │   ├── not-found.tsx        # 404 page
+│   │   │   ├── _offline/page.tsx    # PWA offline fallback page
 │   │   │   ├── robots.ts            # robots.txt generator
 │   │   │   ├── sitemap.ts           # Sitemap generator
 │   │   │   ├── about/
@@ -282,7 +291,8 @@ apk-world/
 │   │   │   ├── editor/
 │   │   │   │   └── RichTextEditor.tsx # TipTap WYSIWYG editor + image upload
 │   │   │   ├── ui/
-│   │   │   │   └── CopyLinkButton.tsx # Copy-to-clipboard button
+│   │   │   │   ├── CopyLinkButton.tsx # Copy-to-clipboard button
+│   │   │   │   └── InstallPrompt.tsx  # PWA install prompt banner
 │   │   │   ├── layout/
 │   │   │   │   ├── Header.tsx       # Nav bar (5 links incl. Tools)
 │   │   │   │   └── Footer.tsx       # Site footer (newsletter, RSS)
@@ -296,7 +306,15 @@ apk-world/
 │   │       └── index.ts         # TypeScript interfaces
 │   ├── next.config.ts
 │   ├── tailwind.config.ts
-│   └── package.json
+│   ├── package.json
+│   ├── scripts/
+│   │   └── generate-icons.js    # PWA icon generator (sharp)
+│   └── public/
+│       ├── manifest.json        # PWA Web App Manifest
+│       ├── icon.svg             # SVG logo
+│       ├── favicon.ico          # Favicon (32×32)
+│       ├── apple-touch-icon.png # Apple touch icon (180×180)
+│       └── icons/               # PWA icons (192, 512, maskable)
 ├── site.conf                    # Project-specific config (ports, name, emoji)
 ├── deploy-contabo.sh            # Unified deployment script (reads site.conf)
 ├── backups/                     # Redis RDB + JSON backups (gitignored)
@@ -364,6 +382,11 @@ apk-world/
 - [x] Meditation Timer (ambient sounds, breathing guide, session stats, admin custom sounds)
 - [x] Exercise Countdown (voice-guided gym buddy, SpeechSynthesis, sets/reps/rest)
 - [x] Parenting article category
+- [x] Progressive Web App (PWA) with offline support
+- [x] Install prompt ("Add to Home Screen" banner)
+- [x] Offline fallback page with links to tools
+- [x] Service worker with multi-strategy caching
+- [x] PWA icons and Web App Manifest
 - [ ] Comments system
 - [ ] Analytics dashboard
 - [ ] CI/CD pipeline (GitHub Actions)
